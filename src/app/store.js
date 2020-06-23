@@ -22,7 +22,7 @@ const categorizeSlice = createSlice({
       const x = action.payload.x;
       const y = action.payload.y;
 
-      const newReward = {...state.rewards[y]}
+      const newReward = {...state.rewards[y]};
 
       if (state.categories[x].rewards[y] === null) {
         state.categories[x].rewards[y] = newReward;
@@ -33,11 +33,24 @@ const categorizeSlice = createSlice({
       const y = action.payload.y;
 
       state.categories[x].rewards[y] = null;
+    },
+    moveReward: (state, action) => {
+      console.log('moving')
+      const newX = action.payload.x;
+      const prevX = action.payload.prevX;
+      const y = action.payload.y;
+
+      const newReward = {...state.rewards[y]};
+      state.categories[newX].rewards[y] = newReward;
+      state.categories[prevX].rewards[y] = null;
+    },
+    testReducer: state => {
+      console.log('testing new reducer');
     }
   }
 })
 
-export const { addReward, deleteReward } = categorizeSlice.actions;
+export const { addReward, deleteReward, moveReward, testReducer } = categorizeSlice.actions;
 
 export default configureStore({
   reducer: undoable(categorizeSlice.reducer)
