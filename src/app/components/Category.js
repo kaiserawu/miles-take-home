@@ -9,13 +9,11 @@ const Category = ({ x, name, rewards, addReward, deleteReward, moveReward }) => 
     const [, drop] = useDrop({
         accept: ItemTypes.REWARD,
         drop: (item) => {
-            console.log('dropping');
             if (item.prevX !== undefined) {
                 moveReward({x: x, prevX: item.prevX, y: item.y})
             } else {
                 addReward({x: x, y: item.y})
             }
-            console.log('finished moving');
         },
         collect: (monitor) => ({
             isOver: !!monitor.isOver(),

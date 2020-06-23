@@ -35,7 +35,6 @@ const categorizeSlice = createSlice({
       state.categories[x].rewards[y] = null;
     },
     moveReward: (state, action) => {
-      console.log('moving')
       const newX = action.payload.x;
       const prevX = action.payload.prevX;
       const y = action.payload.y;

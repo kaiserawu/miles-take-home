@@ -6,7 +6,6 @@ import { ItemTypes } from '../ItemTypes';
 const Reward = ({ onClick, name, allowDelete, x, y }) => {
     const [{ isDragging }, drag] = useDrag({
         item: { type: ItemTypes.REWARD, prevX: x, y: y },
-        begin: (monitor) => {console.log(monitor.getItem())},
         collect: monitor => ({
             isDragging: !!monitor.isDragging()
         })
