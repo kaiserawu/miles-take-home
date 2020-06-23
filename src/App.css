@@ -3,7 +3,8 @@
 }
 
 .category {
-    
+    padding: 0px 3px;
+    border-left: 1px solid black;
 }
 
 .blank {
@@ -18,4 +19,8 @@
     width: 100px;
     background-color: green;
     margin: 5px;
+}
+
+.deleteReward {
+    float: right;
 }

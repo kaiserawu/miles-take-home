@@ -1,5 +1,7 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 import undoable from 'redux-undo';
+import { loadState } from './saveLoad';
+
 
 const initState = {
   newId: 0,
@@ -15,7 +17,7 @@ const initState = {
 
 const categorizeSlice = createSlice({
   name: 'categorizeRewards',
-  initialState: initState,
+  initialState: loadState(initState),
   reducers: {
     addReward: (state, action) => {
       const x = action.payload.x;

@@ -15,8 +15,9 @@ const Category = ({ x, name, rewards, addReward, deleteReward }) => {
                     return <Reward
                         key={index}
                         {...reward}
+                        allowDelete={true}
                         onClick={() => deleteReward({x: x, y: index})}
-                        />;
+                    />;
                 }
             })}
         </div>
