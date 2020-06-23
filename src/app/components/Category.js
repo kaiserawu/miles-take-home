@@ -24,8 +24,8 @@ const Category = ({ x, name, rewards, addReward, deleteReward }) => {
 }
 
 const mapState = (state, props) => ({
-    rewards: state.categories[props.x].rewards,
-    name: state.categories[props.x].name
+    rewards: state.present.categories[props.x].rewards,
+    name: state.present.categories[props.x].name
 });
 
 const mapDispatch = { addReward, deleteReward }

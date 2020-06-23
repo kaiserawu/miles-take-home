@@ -1,4 +1,5 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
+import undoable from 'redux-undo';
 
 const initState = {
   newId: 0,
@@ -39,5 +40,5 @@ const categorizeSlice = createSlice({
 export const { addReward, deleteReward } = categorizeSlice.actions;
 
 export default configureStore({
-  reducer: categorizeSlice.reducer
+  reducer: undoable(categorizeSlice.reducer)
 });

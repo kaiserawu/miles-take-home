@@ -12,7 +12,7 @@ const RewardList = ({ rewards }) => {
 }
 
 const mapState = state => ({
-    rewards: state.rewards
+    rewards: state.present.rewards
 });
 
 export default connect(mapState, null)(RewardList);
