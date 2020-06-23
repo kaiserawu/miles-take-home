@@ -4,7 +4,6 @@ import { loadState } from './saveLoad';
 
 
 const initState = {
-  newId: 0,
   categories: [
     { name: 1, rewards: [null, null, null, null, null] },
     { name: 2, rewards: [null, null, null, null, null] },
@@ -23,8 +22,7 @@ const categorizeSlice = createSlice({
       const x = action.payload.x;
       const y = action.payload.y;
 
-      const newReward = {...state.rewards[y], id: state.newId}
-      state.newId++;
+      const newReward = {...state.rewards[y]}
 
       if (state.categories[x].rewards[y] === null) {
         state.categories[x].rewards[y] = newReward;
