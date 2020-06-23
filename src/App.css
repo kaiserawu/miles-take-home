@@ -1,0 +1,21 @@
+.table {
+    display: flex;
+}
+
+.category {
+    
+}
+
+.blank {
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    margin: 5px;
+}
+
+.reward {
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    margin: 5px;
+}
