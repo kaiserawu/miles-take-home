@@ -23,7 +23,7 @@ const Category = ({ x, name, rewards, addReward, deleteReward, moveReward }) => 
     
     return (
         <div className='category' ref={drop} >
-            <h2>{name}</h2>
+            <h2>C{name}</h2>
             {rewards.map((reward, index) => {
                 if (reward === null) {
                     return <div className='blank' key={index} ></div>;
